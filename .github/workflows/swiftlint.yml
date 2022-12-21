@@ -3,7 +3,7 @@ name: SwiftLint
 on: 
    pull_request:
         branches:
-          - master
+          - main
         paths:
           - '.github/workflows/switflint.yml'
           - '.swiftlint.yml'
@@ -12,14 +12,14 @@ jobs:
   SwiftLint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Github Action for SwiftLint
       uses: norio-nomura/action-swiftlint@3.2.1
 
   BuildFramework:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: List available Xcode versions
       run: ls /Applications | grep Xcode
     - name: Build XC Framework
